@@ -358,6 +358,8 @@ login=bee&password=bug&form=submit
 ### Broken Auth. - Logout Management
 
 Open second tab and logout. Second tab will still have session.
+at just redirects to the login page but does not deletes the session and cookie 
+after loggin out you can still use the app with out logging in again and if you check the PHPSESSID at will still exists
 
 ### Session Mgmt. - Administrative Portals
 
@@ -366,7 +368,30 @@ In URL and Cookies
 ```
 admin=1
 ```
+### Broken Auth. - Forgotten Function
+this page is for sending or viewing the secret if the user forgot his password.
+but here they are showing the secret directly with email compermation. 
+try this
+```
+bwapp-bee@mailinator.com
+```
+such website users credentails can be hacked just by using there emails to reset there password.
 
+
+### Broken Auth. - Insecure Login Forms
+login with the credentails given the file . but you cont see at 
+directly view source or select text or ctrl+a to see them 
+credentails are
+```
+login: tonystark 
+password: I am Iron Man
+```
+### Broken Auth. - Weak Passwords
+using burp to brutforce the commen weak password and login to the system. this page dont have any sepcial security no time out system you can send millions of requests 
+```
+hacked using brup intruder and commen list of username/passwords
+    
+```
 # A3 - Cross-Site Scripting (XSS)
 
 ### XSS - Reflected (GET)
