@@ -1,15 +1,5 @@
 # bWAPP Solutions
-
-In progress rough solutions. This is not a comprehensive solution list. Updating whenever I have the time.
-
-Ref sheet
-http://pentestmonkey.net/cheat-sheet/sql-injection/mysql-sql-injection-cheat-sheet
-
-# Contributors
-
-[@tauseedzaman](https://github.com/tauseedzaman)
-[@mmmds](https://github.com/mmmds)
-
+Hacking bWAPP and adding hacks to this cheetsheel, 
 # A1 - Injection
 
 ### HTML Injection - Reflected (GET)
